@@ -1,0 +1,38 @@
+mat-toolbar{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand{
+    color: orange;
+}
+
+.content{
+    display: flex;    
+}
+
+.user{
+    display: flex;
+ }
+ 
+.user a{
+    padding: 0px 10px 0px 10px;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    padding: 0 10px 0 10px;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+}

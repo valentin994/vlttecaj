@@ -24,7 +24,6 @@
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -63,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "quizApp:build"
+            "browserTarget": "quizApp:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
