@@ -1,15 +1,34 @@
 <div class="container" *ngIf="(currentUser&&user); else loggedOut">
-  <h1>{{ currentUser.username | uppercase }}</h1>
-  <p>Name: {{user.name}}</p>
-  <p>Last name: {{ user.lastName }}</p>
-  <p>
-    {{ currentUser.email }}
-  </p>
-  <p>Points {{ user.points }}</p>
+  <div class="div" *ngIf="edit">
+    <h1>{{currentUser.username | uppercase}}</h1>
+    <h3>Name: {{user.name}}</h3>
+    <h3>Last Name: {{user.lastName}}</h3>
+    <h3>e-mail: {{ currentUser.email }}</h3>
+    <h3>Points: {{ user.points }}</h3>
+    <button color="accent" (click)="editProfile()" mat-button>Edit</button>
+  </div>
+  <div class="div" *ngIf="!edit">
+    <h1>{{currentUser.username | uppercase}}</h1>
+    
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+      <label>
+        First Name:
+        <input type="text" formControlName="name">
+      </label>
+    
+      <label>
+        Last Name:
+        <input type="text" formControlName="lastName">
+      </label>
+    
+    </form>
+    <button color="accent" (click)="onSubmit()" mat-button>Save</button>
+    <button color="alert" (click)="editProfile()" mat-button>Discard</button>    
+  </div>
 
 </div>
 
-<mat-card>Simple card</mat-card>
 
 
 

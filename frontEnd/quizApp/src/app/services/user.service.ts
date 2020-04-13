@@ -22,6 +22,13 @@ export class UserService {
     return this.http.get(USER_URL + id);
   }
 
+  editName(id, data){
+    return this.http.put(USER_URL + id, {
+      name: data.name,
+      lastName: data.lastName
+    })
+  }
+
 
   getPublicContent(): Observable<any> {
     return this.http.get(API_URL + 'all', { responseType: 'text' });

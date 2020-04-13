@@ -1,12 +1,12 @@
 mat-toolbar{
-    background-color: black;
-    color: white;
     display: flex;
+    background-color: black;
     justify-content: space-between;
 }
 
-.brand{
-    color: orange;
+.brand a{
+    color: #69f0ae;
+    text-decoration: none;
 }
 
 .content{

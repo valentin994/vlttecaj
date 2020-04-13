@@ -1,20 +1,14 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <div class="content">
     <div class="brand">
-      Tecaj Logo
+      <a routerLink="home">pyFactory </a>
     </div>
     <ul routerLinkActive="active">
       <li>
-        <a class="nav-link" routerLink="home">Home </a>
-      </li>
-      <li *ngIf="showAdminBoard">
-        <a class="nav-link" routerLink="admin">Admin Board</a>
-      </li>
-      <li *ngIf="showModeratorBoard">
-        <a class="nav-link" routerLink="mod">Moderator Board</a>
+        <a class="nav-link" *ngIf="isLoggedIn" routerLink="user">Examples</a>
       </li>
       <li>
-        <a class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        <a class="nav-link" *ngIf="isLoggedIn" routerLink="user">Full tecaj</a>
       </li>
     </ul>
   </div>
@@ -28,6 +22,9 @@
       </li>
     </ul>
     <ul *ngIf="isLoggedIn">
+      <li>
+        Exp: {{points}}
+      </li>
       <li>
         <a class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
