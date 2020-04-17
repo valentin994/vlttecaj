@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:8081",
 };
 
 app.use(cors(corsOptions));
@@ -20,20 +20,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/models");
 const Role = db.role;
 
-db.sequelize.sync();
-db.sequelize.sync({ force: true }).then(() => {
-  console.log('Drop and Resync Database with { force: true }');
-  initial();
+db.sequelize.sync()
+.then (()=>{
+  initial()
 });
+//db.sequelize.sync({ force: true }).then(() => {
+//  console.log('Drop and Resync Database with { force: true }');
+//  initial();
+//});
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to Valentins application." });
 });
 
 // routes
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
+require('./app/routes/userInfo.routes')(app);
+require('./app/routes/course.routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

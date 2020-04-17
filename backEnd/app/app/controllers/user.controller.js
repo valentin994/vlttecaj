@@ -1,9 +1,14 @@
+const db = require("../models");
+const config = require("../config/auth.config");
+const User = db.user;
+const Op = db.Sequelize.Op;
+
 exports.allAccess = (req, res) => {
   res.status(200).send("Public Content.");
 };
 
 exports.userBoard = (req, res) => {
-  res.status(200).send("User Content.");
+  res.status(200).send("User content");
 };
 
 exports.adminBoard = (req, res) => {
@@ -13,3 +18,4 @@ exports.adminBoard = (req, res) => {
 exports.moderatorBoard = (req, res) => {
   res.status(200).send("Moderator Content.");
 };
+
