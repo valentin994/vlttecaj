@@ -1,14 +1,11 @@
 <mat-toolbar color="primary">
   <div class="content">
     <div class="brand">
-      <a routerLink="home">pyFactory </a>
+      <a routerLink="">pyFactory </a>
     </div>
     <ul routerLinkActive="active">
       <li>
-        <a class="nav-link" *ngIf="isLoggedIn" routerLink="user">Examples</a>
-      </li>
-      <li>
-        <a class="nav-link" *ngIf="isLoggedIn" routerLink="user">Full tecaj</a>
+        <a class="nav-link" routerLink="tecaj" *ngIf="isLoggedIn">Tecaj</a>
       </li>
     </ul>
   </div>
@@ -22,14 +19,14 @@
       </li>
     </ul>
     <ul *ngIf="isLoggedIn">
-      <li>
-        Exp: {{points}}
+      <li *ngIf="points">
+       <span id="xp">Exp: {{points}}</span>
       </li>
       <li>
         <a class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li>
-        <a (click)="logout()">LogOut</a>
+        <a routerLink="" (click)="logout()">LogOut</a>
       </li>
     </ul>
   </div>

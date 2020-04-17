@@ -1,3 +1,4 @@
+<div class="bg">
 <div class="container" *ngIf="(currentUser&&user); else loggedOut">
   <div class="div" *ngIf="edit">
     <h1>{{currentUser.username | uppercase}}</h1>
@@ -23,8 +24,8 @@
       </label>
     
     </form>
-    <button color="accent" (click)="onSubmit()" mat-button>Save</button>
-    <button color="alert" (click)="editProfile()" mat-button>Discard</button>    
+    <button (click)="onSubmit()" mat-button>Save</button>
+    <button (click)="editProfile()" mat-button>Discard</button>    
   </div>
 
 </div>
@@ -35,3 +36,4 @@
 <ng-template #loggedOut>
   Please login.
 </ng-template>
+</div>

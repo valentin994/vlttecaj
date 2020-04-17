@@ -1,0 +1,23 @@
+.bg{
+    background-color: rgb(41, 44, 44);
+    border-top: white solid thin;
+    border-bottom: white solid thin;
+}
+
+.card{
+    background-color: #292C2C;
+    color: white;
+    align-items: center;
+    text-align: center;
+    
+}
+
+img{
+   width: 30%;
+}
+
+.footer{
+    background-color: #292C2C;
+    color: whitesmoke;
+    height: 5rem;
+}

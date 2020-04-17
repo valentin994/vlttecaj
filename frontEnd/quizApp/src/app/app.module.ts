@@ -24,12 +24,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HomeComponent } from './home/home.component';
+import { TecajComponent } from './tecaj/tecaj.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -37,10 +35,9 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     ProfileComponent,
     LoginComponent,
-    BoardAdminComponent,
-    BoardUserComponent,
-    BoardModeratorComponent,
     HomeComponent,
+    TecajComponent,
+    CourseComponent,
   ],
   imports: [
     BrowserModule,
