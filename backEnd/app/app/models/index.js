@@ -27,9 +27,12 @@ db.sequelize = sequelize;
 //Tablice u bazi
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
-db.userInfo = require("../models/userInfo.model.js")(sequelize, Sequelize)
-db.course = require("../models/course.model.js")(sequelize, Sequelize)
-
+db.userInfo = require("../models/userInfo.model.js")(sequelize, Sequelize);
+db.course = require("../models/course.model.js")(sequelize, Sequelize);
+db.courseprogress = require("../models/courseprogress.model.js")(sequelize, Sequelize);
+db.chapter = require("../models/chapter.model.js")(sequelize, Sequelize); 
+db.question = require("../models/question.model.js") (sequelize, Sequelize);
+db.answer = require("../models/answer.model.js") (sequelize, Sequelize);
 
 //Veze izmedu tablica
 db.role.belongsToMany(db.user, {
@@ -42,6 +45,14 @@ db.user.belongsToMany(db.role, {
   foreignKey: "userId",
   otherKey: "roleId"
 });
+
+db.courseprogress.belongsTo(db.course);
+db.courseprogress.belongsTo(db.userInfo);
+
+db.question.belongsTo(db.chapter);
+db.answer.belongsTo(db.question);
+
+db.chapter.belongsTo(db.course);
 
 db.userInfo.belongsTo(db.user);
 
