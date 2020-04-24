@@ -2,11 +2,22 @@ const db = require("../models");
 const Course = db.course
 const Op = db.Sequelize.Op;
 
+exports.findAll = (req, res) => {
+    Course.findAll()
+    .then(data => {
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err
+        })
+    })
+};
 
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    course.findByPk(id)
+    Course.findByPk(id)
         .then(data => {
             res.send(data);
         })

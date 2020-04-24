@@ -14,6 +14,10 @@ module.exports = function (app) {
         "/api/course/:id",
         controller.findOne);
 
+    app.get(
+        "/api/course",
+        controller.findAll);
+
     app.put(
         "/api/course/:id",
         controller.updateCourse

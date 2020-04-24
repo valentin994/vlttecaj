@@ -26,7 +26,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HomeComponent } from './home/home.component';
-import { TecajComponent } from './tecaj/tecaj.component';
 import { CourseComponent } from './course/course.component';
 
 @NgModule({
@@ -36,7 +35,6 @@ import { CourseComponent } from './course/course.component';
     ProfileComponent,
     LoginComponent,
     HomeComponent,
-    TecajComponent,
     CourseComponent,
   ],
   imports: [

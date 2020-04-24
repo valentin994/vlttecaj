@@ -1,0 +1,50 @@
+.bg{
+    background-color: #212121;
+    color: white;
+}
+.svg{
+    background-image: url("../../assets/network-background.svg");
+}
+
+.iconbanner{
+    background-color: #292C2C;
+}
+.material-icons.md-48 { 
+    color: #3FF0AE;
+ }
+
+
+.card{
+    background-color: #292C2C;
+}
+
+.card:hover{
+    box-shadow: 1px 1px 10px #3FF0AE;
+}
+
+.container ol{
+    background-color: transparent;
+}
+
+.breadcrumb-item{
+    color: #3FF0AE;
+    font-size: 14px;
+}
+
+.breadcrumb-item a{
+    color: gray;
+}
+.breadcrumb-item a:hover{
+    color: #3FF0AE;
+    text-decoration: none;
+    transition: ease-in-out 0.2s;
+}
+i{
+    padding: 10px;
+}
+
+.cardlink{
+    text-decoration: none;
+    color: white;
+}
+

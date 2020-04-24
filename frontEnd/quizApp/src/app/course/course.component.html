@@ -1,1 +1,63 @@
-<p>course works!</p>
+<div class="bg">
+    <div class="svg">
+        <div class="container" *ngIf="(currentUser); else loggedOut">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tecaj</li>
+                </ol>
+            </nav>
+            <h1>Unaprijedi svoje vjestine</h1>
+            <br>
+            <br>
+            <p>Uz tecaje u najpopularnijem programskom jeziku na svijetu. Dugacke i zamorne zadatke automatiziraj uz par
+                linij koda. <br>
+                Prvi u hrvatskoj all in one, top shop ponuda, dobijes i perilicu rublja i sudja u jednom. Iskustva nekih
+                od, polaznika <br>
+                kaze kako nikada nisu prali rublje sa sudjem. No to je potpuno krivo i protiv hrvatske. Kao pravi <br>
+                hrvati nasa duznost je pisati pizdarije kako bi napunili ovaj usrani header.
+            </p>
+            <br>
+        </div>
+    </div>
+    <div class="iconbanner">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <i class="material-icons md-48" style="vertical-align: middle">schedule</i>Brzo
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <i class="material-icons md-48" style="vertical-align: middle">done</i>Lagano
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <i class="material-icons md-48" style="vertical-align: middle">eco</i>Efikasno
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngIf="(currentUser); else loggedOut">
+        <div class="row" style="padding-top:20px ;">
+            <div *ngFor="let c of course" style="padding: 10px;" class="col-12 col-sm-12 col-md-6 col-lg-6">
+                <a routerLink="/" class="cardlink">
+                    <div class="card mb-3" style="max-width: 540px;height: 100px;">
+                        <div class="row no-gutters">
+                          <div class="col-2">
+                            <img style="padding-top: 5px;" src="../../assets/pylogo.png" class="card-img" alt="...">
+                          </div>
+                          <div class="col-8">
+                            <div class="card-body">
+                              <h5 class="card-title">{{c.title}}</h5>
+                              <p class="card-text"><small class="text-muted">Level {{c.level}} Chapters: 10 Language: {{c.progLang}} </small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    <ng-template #loggedOut>
+        Please login.
+    </ng-template>
+</div>
